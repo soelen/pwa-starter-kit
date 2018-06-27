@@ -195,6 +195,14 @@ class MyApp extends connect(store)(LitElement) {
       </nav>
     </app-header>
 
+    <!-- Main content -->
+    <main role="main" class="main-content">
+      <my-view1 class="page" active?="${_page === 'view1'}"></my-view1>
+      <my-view2 class="page" active?="${_page === 'view2'}"></my-view2>
+      <my-view3 class="page" active?="${_page === 'view3'}"></my-view3>
+      <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
+    </main>
+
     <!-- Drawer content -->
     <app-drawer opened="${_drawerOpened}"
         on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
@@ -204,14 +212,6 @@ class MyApp extends connect(store)(LitElement) {
         <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
       </nav>
     </app-drawer>
-
-    <!-- Main content -->
-    <main role="main" class="main-content">
-      <my-view1 class="page" active?="${_page === 'view1'}"></my-view1>
-      <my-view2 class="page" active?="${_page === 'view2'}"></my-view2>
-      <my-view3 class="page" active?="${_page === 'view3'}"></my-view3>
-      <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
-    </main>
 
     <footer>
       <p>Made with &hearts; by the Polymer team.</p>
